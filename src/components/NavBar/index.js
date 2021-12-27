@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 //import {Button} from "../Button"
 import "./NavBar.scss";
 
@@ -37,43 +37,43 @@ function NavBar() {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar animate__animated animate__fadeInLeftBig">
         <div className="navbar-container">
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
                 Accueil{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 to="/projets"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Projets{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 to="/contact"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Contact{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 to="/formation"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Formation{" "}
-              </Link>
+              </NavLink>
             </li>
           </ul>
           {/* Pas encore sûr de l'utiliser

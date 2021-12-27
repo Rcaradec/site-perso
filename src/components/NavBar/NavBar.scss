@@ -1,6 +1,6 @@
 .navbar {
-  background: rgba(0, 0, 0, 0.9);
-  height: 10vh;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  height: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,12 +14,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
-  max-width: 1500px;
 }
 
 .navbar-logo {
-  color: #ffffff;
+  color: #fff;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -35,14 +33,8 @@
 }
 
 .nav-menu {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 60vw;
-  justify-content: end;
-  margin-right: 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .nav-item {
@@ -50,7 +42,7 @@
 }
 
 .nav-links {
-  color: #ffffff;
+  color: #fff;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -155,4 +147,8 @@
     color: #242424;
     transition: 250ms;
   }
+}
+
+.active {
+  color: rgb(0, 132, 255);
 }

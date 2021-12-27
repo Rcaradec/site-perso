@@ -1,13 +1,16 @@
 .main-container {
-  color: white;
+  color: rgb(255, 255, 255);
   line-height: 2;
   font-family: "Montserrat", sans-serif;
-  background-image: url("https://media.istockphoto.com/photos/black-and-white-portrait-of-a-friendly-adult-man-picture-id1211615207?b=1&k=20&m=1211615207&s=170667a&w=0&h=a9UrtW2R02aqPIflivtxfUfaVQZuKYEYlJxWEM1lOCk=");
+  background-image: url("https://media.istockphoto.com/photos/handsome-in-spectacles-picture-id656673020?b=1&k=20&m=656673020&s=170667a&w=0&h=DXXxfyKm_TAwddaqwCoz04Y8mpxI5JI9Pd2nbTfov6E=");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 85vh;
+  //background-position: 200px 100px;
+  height: 95vh;
   display: flex;
   align-items: center;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 .text-container {
@@ -24,4 +27,5 @@
 .main-description {
   font-size: 1.5rem;
   width: 50%;
+  margin-bottom: 1rem;
 }
