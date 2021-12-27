@@ -15,16 +15,18 @@ function Contact() {
       email: emailRef.current.value,
       message: messageRef.current.value,
     };
-    alert("tadaaa!: \n" + JSON.stringify(data) + "Your data 😎");
+    // alert("tadaaa!: \n" + JSON.stringify(data) + "Your data 😎");
   };
+
+  //Ajout du "tabindex" pour l accessibilite/navigation entre les inputs du form au "tab"
 
   return (
     <div className="container">
-      <h1>Contactez Moi</h1>
+      <h1 className="form-title">Contactez Moi</h1>
       <form onSubmit={handleSubmit} className="form">
         <div className="name">
           <label for="firstName" id="nameLabel">
-            First Name
+            Prénom
           </label>
           <input
             type="text"
@@ -35,7 +37,7 @@ function Contact() {
             tabindex="1"
           />
 
-          <label for="lastName">Last name</label>
+          <label for="lastName">Nom</label>
           <input
             type="text"
             id="lastName"
@@ -61,9 +63,10 @@ function Contact() {
           className="message"
           name="message"
           ref={messageRef}
+          tabindex="4"
         ></textarea>
         <button type="submit" className="send">
-          Send
+          Envoyer
         </button>
       </form>
     </div>
