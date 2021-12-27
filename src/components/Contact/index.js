@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "./Contact.scss";
 
 function Contact() {
+  //hooks en useRef pour eviter le re-render du useState
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
@@ -66,7 +67,7 @@ function Contact() {
           tabindex="4"
         ></textarea>
         <button type="submit" className="send">
-          Envoyer
+          Envoyer formulaire
         </button>
       </form>
     </div>
