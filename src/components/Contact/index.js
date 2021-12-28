@@ -1,76 +1,72 @@
 import React, { useRef } from "react";
 import "./Contact.scss";
+import { send } from "emailjs-com";
+import { useState } from "react";
+
+//import emailjs from "email-js.com";
+import { init } from "emailjs-com";
+init("user_CZcgPBjIisS3YBjf6SxwA");
 
 function Contact() {
-  //hooks en useRef pour eviter le re-render du useState
-  const firstNameRef = useRef(null);
-  const lastNameRef = useRef(null);
-  const emailRef = useRef(null);
-  const messageRef = useRef(null);
+  const userId = "user_CZcgPBjIisS3YBjf6SxwA";
+  const templateId = "template_site-perso";
+  const serviceId = "site-perso";
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = {
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
-      email: emailRef.current.value,
-      message: messageRef.current.value,
-    };
-    // alert("tadaaa!: \n" + JSON.stringify(data) + "Your data 😎");
+  const [toSend, setToSend] = useState({
+    from_name: "",
+    to_name: "",
+    message: "",
+    reply_to: "",
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    send(serviceId, templateId, toSend, userId)
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+      });
   };
 
-  //Ajout du "tabindex" pour l accessibilite/navigation entre les inputs du form au "tab"
-
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
   return (
-    <div className="container">
-      <h1 className="form-title">Contactez Moi</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <div className="name">
-          <label for="firstName" id="nameLabel">
-            Prénom
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            className="firstName"
-            ref={firstNameRef}
-            tabindex="1"
-          />
-
-          <label for="lastName">Nom</label>
-          <input
-            type="text"
-            id="lastName"
-            className="lastName"
-            ref={lastNameRef}
-            tabindex="2"
-          />
-        </div>
-        <label for="email">Email</label>
+    <>
+      <form onSubmit={onSubmit}>
         <input
-          type="email"
-          name="email"
-          id="email"
-          className="email"
-          placeholder="example@corp.com"
-          ref={emailRef}
-          tabindex="3"
+          type="text"
+          name="from_name"
+          placeholder="from name"
+          value={toSend.from_name}
+          onChange={handleChange}
         />
-
-        <label for="message">Message</label>
-        <textarea
-          placeholder="Start typing..."
-          className="message"
+        <input
+          type="text"
+          name="to_name"
+          placeholder="to name"
+          value={toSend.to_name}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
           name="message"
-          ref={messageRef}
-          tabindex="4"
-        ></textarea>
-        <button type="submit" className="send">
-          Envoyer formulaire
-        </button>
+          placeholder="Your message"
+          value={toSend.message}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="reply_to"
+          placeholder="Your email"
+          value={toSend.reply_to}
+          onChange={handleChange}
+        />
+        <button type="submit">Envoyer</button>
       </form>
-    </div>
+    </>
   );
 }
 
