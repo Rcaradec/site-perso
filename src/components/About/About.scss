@@ -1,6 +1,6 @@
 .about-container {
   color: rgb(255, 255, 255);
-  line-height: 2;
+  line-height: 1.5;
   font-family: "Montserrat", sans-serif;
   background-image: url("https://media.istockphoto.com/photos/handsome-in-spectacles-picture-id656673020?b=1&k=20&m=656673020&s=170667a&w=0&h=DXXxfyKm_TAwddaqwCoz04Y8mpxI5JI9Pd2nbTfov6E=");
   background-repeat: no-repeat;
@@ -21,11 +21,17 @@
   font-size: 2rem;
 }
 
-.about-subtitle {
+.about-title {
   font-size: 3rem;
+  margin: 2rem 0;
+  font-weight: bold;
 }
 .about-description {
   font-size: 1.5rem;
   width: 50%;
   margin-bottom: 1rem;
+}
+.about-link {
+  color: #0b7ce1;
+  text-decoration: none;
 }

@@ -34,7 +34,10 @@ function Contact() {
   };
   return (
     <div className="form-container">
-      <form className="form" onSubmit={onSubmit}>
+      <form
+        className="form animate__animated animate__fadeInUp"
+        onSubmit={onSubmit}
+      >
         <h1 className="form-title"> Pour me contacter:</h1>
         <input
           className="form-input"
