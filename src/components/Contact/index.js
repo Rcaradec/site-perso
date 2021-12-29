@@ -20,7 +20,6 @@ function Contact() {
   });
 
   const onSubmit = (e) => {
-    e.preventDefault();
     send(serviceId, templateId, toSend, userId)
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
@@ -34,39 +33,46 @@ function Contact() {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
   return (
-    <>
-      <form onSubmit={onSubmit}>
+    <div className="form-container">
+      <form className="form" onSubmit={onSubmit}>
+        <h1 className="form-title"> Pour me contacter:</h1>
         <input
+          className="form-input"
           type="text"
           name="from_name"
-          placeholder="from name"
+          placeholder="Votre Nom "
           value={toSend.from_name}
           onChange={handleChange}
         />
-        <input
+        {/* <input
+          className="form-input"
           type="text"
           name="to_name"
           placeholder="to name"
           value={toSend.to_name}
           onChange={handleChange}
-        />
+        /> */}
         <input
-          type="text"
-          name="message"
-          placeholder="Your message"
-          value={toSend.message}
-          onChange={handleChange}
-        />
-        <input
+          className="form-input"
           type="text"
           name="reply_to"
-          placeholder="Your email"
+          placeholder="Votre email"
           value={toSend.reply_to}
           onChange={handleChange}
         />
-        <button type="submit">Envoyer</button>
+        <input
+          className="form-input text_area"
+          type="textarea"
+          name="message"
+          placeholder="Votre message"
+          value={toSend.message}
+          onChange={handleChange}
+        />
+        <button className="form-button" type="submit">
+          Envoyer
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 
