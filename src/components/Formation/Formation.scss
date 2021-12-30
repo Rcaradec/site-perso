@@ -1,0 +1,63 @@
+.formation-container {
+  background-color: rgb(158, 158, 158);
+  height: 100vh;
+}
+.formation {
+  margin: auto;
+  width: 80vw;
+  height: 90vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  &-ul {
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+  }
+  &-link {
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 4rem;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    transition: 0.5s ease-in-out;
+  }
+  &-link:hover {
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+  }
+
+  &-title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  &-subtitle {
+    font-size: 2rem;
+  }
+  &-description {
+    font-size: 1.5rem;
+    width: 50%;
+    line-height: 1.5;
+  }
+}
+
+.school-container {
+  height: 50vh;
+
+  padding: 2rem;
+  margin: 1rem auto;
+  background-color: lightgray;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+  border: 1px solid;
+  background-color: rgb(151, 151, 151);
+}
