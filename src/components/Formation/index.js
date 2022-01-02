@@ -22,7 +22,6 @@ export default function Formation() {
           ))}
         </ul>
       </div>
-
       <div>
         {ecoles.map((ecole, index) => (
           <div
