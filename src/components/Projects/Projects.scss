@@ -1,0 +1,61 @@
+.projects {
+  &-prez {
+    margin-top: 2rem;
+    padding: 2rem;
+  }
+  &-main-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &-desc {
+    font-weight: bold;
+    padding-top: 1rem;
+  }
+  &-container {
+    height: 50vh;
+    padding: 2rem;
+    margin: 1rem auto;
+    background-color: lightgray;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+    border: 1px solid;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 3px;
+  }
+  &-container:hover {
+    animation: bounce 1s;
+  }
+  &-title {
+    font-size: 1.5rem;
+  }
+  &-ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-li {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+}

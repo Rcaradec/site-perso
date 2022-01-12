@@ -3,8 +3,6 @@ import "./Formation.scss";
 import "animate.css";
 import ecoles from "../../data/ecoles";
 
-console.log(ecoles);
-
 export default function Formation() {
   return (
     <div className="formation-container">
